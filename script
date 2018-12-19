@@ -12,7 +12,6 @@ balancevar=$( cat balance )
 printf -v int %.0f "$balancevar"
 balanceint=${balancevar%.*}
 balancevar=$(( balanceint - 10))
-#Just change your address here!
 if [ $balancevar -gt 10 ]
 then
         php light-arionum-cli send $aroaddress $balancevar
