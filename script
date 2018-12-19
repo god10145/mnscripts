@@ -1,0 +1,22 @@
+#!/bin/bash
+#super junky script to automatically send aro to another address.
+#by icusu.  copy it all you want.
+#put your aro address that you want your aro sent to after the equal sign, no spaces.  
+aroaddress=
+php light-arionum-cli balance >> balance
+grep -o 'Balance:\ .*' balance >> newbalance
+rm balance
+sed 's/Balance:\ //g' newbalance >> balance
+rm newbalance
+balancevar=$( cat balance )
+printf -v int %.0f "$balancevar"
+balanceint=${balancevar%.*}
+balancevar=$(( balanceint - 10))
+#Just change your address here!
+if [ $balancevar -gt 10 ]
+then
+        php light-arionum-cli send $aroaddress $balancevar
+else
+        echo Sorry, your balance was only $balanceint ish, wait a bit.
+fi
+rm balance
