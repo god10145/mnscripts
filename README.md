@@ -1,5 +1,6 @@
 # mnscripts
 Masternode scripts for Arionum
+
 So, this is a pretty junky thing I threw together so I can have all of my masternodes get their earnings sent to a centralized wallet.  I did this because I used the web wallet and yeah, you guys know what happened there.  This does NOT need to be ran on the masternodes.  I instead have all of my wallets being hosted on more secure local server that doesn't do a lot else besides have cli wallets.
 
 Guide:
