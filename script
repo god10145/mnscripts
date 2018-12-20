@@ -3,6 +3,10 @@
 #by icusu.  copy it all you want.
 #put your aro address that you want your aro sent to after the equal sign, no spaces.  
 aroaddress=
+
+#just added this to make it cron friendly
+workingdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+cd $workingdir
 php light-arionum-cli balance >> balance
 grep -o 'Balance:\ .*' balance >> newbalance
 rm balance
